@@ -1,0 +1,37 @@
+
+<% @page="index" %>
+<section>
+	<div class="container" >
+		<div class="featured-properties animated out" data-delay="0" data-animation="fadeInUp">
+			<div class="section-heading mrgt7x mrgb7x">
+				<h3><span>OUR FEATURED PROPERTIES</span></h3>
+			</div>
+      <% @spaces.each_slice(3) do |space_group| %>
+			<div class="section-detail">
+         <% space_group.each do |space| %>
+				    <div class="col-md-4 col-sm-6 animated out" data-delay="0" data-animation="fadeInUp">
+					<div class="property-box border-hover">
+            <div class="appartment-img"><%= cl_image_tag(space.image_url(:thumbnail)) %>
+              <div class="detail-btn"> <%= link_to 'More Detail', space, class:"more-detail" %> </div>
+						</div>
+						<div class="property-text">
+							<div class="appartment-name">
+								<h4><%= space.name %></h4>
+							</div>
+							<div class="property-price">
+                <h1><span><sup>$</sup><%= space.price %></span></h1>
+							</div>
+							<ul class="appartment-detail">
+                <li><%= space.number_of_seats %> seats in this space</li>
+        <%= link_to 'Edit', edit_space_path(space) %>
+        <%= link_to 'Destroy', space, method: :delete, data: { confirm: 'Are you sure?' } %>
+              </ul>
+						</div>
+					</div>
+				</div>
+         <% end %>
+			</div>
+     <% end %>
+		</div>
+	</div>
+</section>

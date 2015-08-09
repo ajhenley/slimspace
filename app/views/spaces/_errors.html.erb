@@ -1,0 +1,13 @@
+<% if @space.errors.any? %>
+  <div class="errors">
+    <h3>
+      <%= pluralize(@space.errors.count, 'error') %>
+      prohibited this space from being saved:
+    </h3>
+    <ul>
+      <% @space.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

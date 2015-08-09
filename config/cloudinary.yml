@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dratccssz
+  api_key: '331551988443177'
+  api_secret: fp_w6POr1xhlq4KexCmH6qtJj5Y
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: dratccssz
+  api_key: '331551988443177'
+  api_secret: fp_w6POr1xhlq4KexCmH6qtJj5Y
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: dratccssz
+  api_key: '331551988443177'
+  api_secret: fp_w6POr1xhlq4KexCmH6qtJj5Y
+  enhance_image_tag: true
+  static_image_support: false

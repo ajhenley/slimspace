@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SlimSpace</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+  <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <!-- Latest compiled and minified JavaScript -->
+   
+  
+  <%= csrf_meta_tags %>
+  
+</head>
+<body>
+  
+  <%= render 'layouts/header' %>
+
+  <%if @page=="index" %>
+   <%= render 'layouts/slider' %>  
+  <% end %>
+  
+   <div class="container">  
+  <% flash.each do |name, msg| %>
+           <% if msg.is_a?(String) %>
+           <div class="alert alert-<%= name == :notice ? "success" : "danger" %> alert-dismissable" > 
+           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+           <%= content_tag :div, msg, :id => "flash_#{name}" %>
+       </div>
+       
+     <% end %>
+    <% end %>
+
+  
+  <%= yield %>     
+  </div>
+  <%= render 'layouts/footer' %>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+</html>

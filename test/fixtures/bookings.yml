@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start: 2015-08-09 03:02:36
+  end: 2015-08-09 03:02:36
+  user_id: 1
+  space_id: 1
+
+two:
+  start: 2015-08-09 03:02:36
+  end: 2015-08-09 03:02:36
+  user_id: 1
+  space_id: 1

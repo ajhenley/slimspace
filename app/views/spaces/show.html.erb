@@ -1,0 +1,45 @@
+<section class="border-top">
+	<div class="container">
+		<div class="page-title mrgb6x mrgt6x clearfix">
+			<h4 class="page-name"><%= @space.city %></h4>
+      <div class="tag-bar"> <a href="#"><span><%= @space.state %></span></a> </div>
+			<ul class="breadcrumb">
+				<li><a href="#">Pages</a></li>
+				<li class="active"><a href="#">Property Single</a></li>
+			</ul>
+		</div>
+	</div>
+</section>
+<section>
+	<div class="container">
+		<div class="property-single">
+			<div class="col-md-6 no-padding col-sm-8 animated out" data-delay="0" data-animation="fadeInUp">
+        <div class="property-single-img"><%= cl_image_tag(@space.image_url(:display)) %>
+					<div class="image-detail">
+						<h5 class="place-name"><%= @space.name %></h5>
+            <div class="place-price"><span><%= @space.price %><sup>/week</sup></span></div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 col-sm-4 animated out" data-delay="0" data-animation="fadeInUp">
+				<div class="property-heading property-info">
+					<h4><span><%= @space.name %></span></h4>
+					<p><%= @space.description %></p>
+          <div class="booking-btn"><%= link_to "BOOK IT NOW", new_space_booking_path(@space), class:"book-it" %></div>
+				</div>
+        <div class="col-md-6 no-padding col-sm-6 animated out" data-delay="0" data-animation="fadeInUp">
+
+			</div>
+			</div>
+		</div>
+    
+	</div>
+
+</section>
+<br><br>
+  <% @space.bookings.each do |b| %>  
+          <div class="alert alert-info" role="alert"> <i class="fa fa-info-circle"></i> <a href="#" class="alert-link">Current Booking:</a> <%= b.start_time.strftime("%b/%d/%Y")  %> at <%= b.start_time.strftime("%I:%M%p")  %> for <%= b.length %> hours</div>
+          
+       <% end %>
+
+
